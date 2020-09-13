@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+TodoList.create ([
+  {
+    titel: "work"
+  },
+  {
+    titel: "home"
+  }
+  ])
+
+TodoItem.create ([
+  {
+    titel: "smth"
+  },
+  {
+    titel: "milk"
+  }
+  ])
