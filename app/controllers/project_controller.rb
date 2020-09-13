@@ -1,12 +1,10 @@
-module Api
-  module Version1
-    class ProjectController < ApplicationController
+  class ProjectController < ApplicationController
       before_action :set_todo_list, :set_todo_item, only: [:show]
 
       def index
         @todolists = TodoList.all
-        @todo_items = TodoItem.all
-        render json: @todolists, @todo_items
+        @todoitems = TodoItem.all
+        render json: {todolist: @todolist, todoitem: @todoitem}
       end
 
       def create_list
@@ -30,7 +28,7 @@ module Api
       end
 
       def show
-        render json: @todolist, @todoitem
+        render json: {todolist: @todolist, todoitem: @todoitem}
       end
 
       private
@@ -50,6 +48,4 @@ module Api
       def todo_item_params
         params.require(:TodoItem).permit(:titel)
       end
-    end
-  end
 end
